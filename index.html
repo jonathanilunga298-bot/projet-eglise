@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Église Lumière de Sion — Site d'église (TP)</title>
+<meta name="description" content="Site web d'une église : accueil, programme des cultes, ministères, prédications, événements, dons et contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Bibliothèque d'icônes -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 2v20M6 8h12"/></symbol>
+    <symbol id="i-church" viewBox="0 0 24 24"><path d="M10 9h4M12 7v5M14 22v-4a2 2 0 0 0-4 0v4M18 22V5.618a1 1 0 0 0-.553-.894l-4-2a1 1 0 0 0-.894 0l-4 2A1 1 0 0 0 6 5.618V22M18 7l3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9.382a1 1 0 0 1 .553-.894L6 7"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></symbol>
+    <symbol id="i-radio" viewBox="0 0 24 24"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5M19.1 4.9C23 8.8 23 15.1 19.1 19"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#accueil" aria-label="Accueil">
+      <span class="logo-img"><svg class="ico" style="stroke-width:3"><use href="#i-cross"/></svg></span>
+      <span class="logo-txt"><b>Lumière de Sion</b><small>Une lumière pour la cité</small></span>
+    </a>
+    <nav>
+      <ul id="menu">
+        <li><a href="#accueil" class="active">Accueil</a></li>
+        <li><a href="#cultes">Nos cultes</a></li>
+        <li><a href="#apropos">Notre vision</a></li>
+        <li><a href="#ministeres">Nos ministères</a></li>
+        <li><a href="#predications">Prédications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="droite">
+      <a href="#dons" class="btn-don">Faire un don</a>
+      <button class="toggle" id="theme" aria-label="Changer de thème"></button>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+  <div class="wrap">
+    <p class="eyebrow">◆ Église évangélique</p>
+    <h1>Une famille où chacun trouve sa place</h1>
+    <p class="verset">« Que votre lumière brille devant les hommes. » — Matthieu 5:16</p>
+    <p class="d">Venez comme vous êtes. Louange, enseignement de la Parole et communion fraternelle, chaque semaine, pour toute la famille.</p>
+    <a href="#cultes" class="btn btn-rouge">Nous rejoindre <svg class="ico"><use href="#i-arrow"/></svg></a>
+    <a href="#predications" class="btn btn-sombre">Écouter une prédication</a>
+    <div class="chips">
+      <div class="chip"><svg class="ico"><use href="#i-clock"/></svg><span><b>Dimanche</b> · 09h30</span></div>
+      <div class="chip"><svg class="ico"><use href="#i-clock"/></svg><span><b>Mercredi</b> · 18h30</span></div>
+      <div class="chip"><svg class="ico"><use href="#i-clock"/></svg><span><b>Vendredi</b> · 19h00</span></div>
+      <div class="chip"><svg class="ico"><use href="#i-pin"/></svg><span>12 avenue de l'Espérance</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="cultes">
+  <div class="wrap">
+    <p class="eyebrow">◆ Nos rendez-vous</p>
+    <h2>Programme de la semaine</h2>
+    <p class="lead">Un temps de rencontre avec Dieu et avec les autres, tout au long de la semaine. Toutes les réunions sont ouvertes à tous.</p>
+    <div class="grid prog">
+      <div class="jour">
+        <div class="ibox"><svg class="ico"><use href="#i-book"/></svg></div>
+        <h3>Mercredi</h3><div class="sous">Enseignement &amp; accueil</div>
+        <div class="creneau"><span class="heure">10h – 17h</span><div><b>Accueil pastoral</b><span>Porte ouverte, sans rendez-vous</span></div></div>
+        <div class="creneau"><span class="heure">18h30 – 20h</span><div><b>Étude biblique</b><span>Partage et enseignement de la Parole</span></div></div>
+      </div>
+      <div class="jour">
+        <div class="ibox"><svg class="ico"><use href="#i-flame"/></svg></div>
+        <h3>Vendredi</h3><div class="sous">Prière &amp; intercession</div>
+        <div class="creneau"><span class="heure">19h – 21h</span><div><b>Veillée de prière</b><span>Pour l'église, la ville et les familles</span></div></div>
+      </div>
+      <div class="jour">
+        <div class="ibox"><svg class="ico"><use href="#i-church"/></svg></div>
+        <h3>Dimanche</h3><div class="sous">Le grand rendez-vous</div>
+        <div class="creneau"><span class="heure">09h30 – 12h</span><div><b>Culte d'adoration</b><span>Louange, prédication, école du dimanche</span></div></div>
+        <div class="creneau"><span class="heure">14h30 – 16h</span><div><b>Réunion des jeunes</b><span>Jeux, partage et discipulat</span></div></div>
+      </div>
+      <div class="jour">
+        <div class="ibox"><svg class="ico"><use href="#i-calendar"/></svg></div>
+        <h3>1<sup style="font-size:.5em">er</sup> dimanche du mois</h3><div class="sous">Rendez-vous spécial</div>
+        <div class="creneau"><span class="heure">12h30 – 15h</span><div><b>Culte prolongé</b><span>Temps d'adoration et témoignages</span></div></div>
+        <div class="creneau"><span class="heure">17h – 20h</span><div><b>Sainte-Cène</b><span>Communion et repas fraternel</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt about" id="apropos">
+  <div class="wrap cols">
+    <div>
+      <p class="eyebrow">◆ Qui sommes-nous</p>
+      <h2>Notre histoire et notre vision</h2>
+      <p>Née d'un petit groupe de prière, notre communauté a grandi dans la foi et le service. Aujourd'hui, nous sommes une église ouverte, qui annonce l'Évangile et accompagne chaque personne dans sa vie quotidienne.</p>
+      <ul class="valeurs">
+        <li><svg class="ico"><use href="#i-book"/></svg><span><b>La Parole</b> — la Bible est au centre de notre enseignement.</span></li>
+        <li><svg class="ico"><use href="#i-users"/></svg><span><b>La communion</b> — nous avançons ensemble, comme une famille.</span></li>
+        <li><svg class="ico"><use href="#i-heart"/></svg><span><b>Le service</b> — nous aimons concrètement notre prochain.</span></li>
+        <li><svg class="ico"><use href="#i-globe"/></svg><span><b>La mission</b> — nous partageons l'espérance autour de nous.</span></li>
+      </ul>
+    </div>
+    <div class="visuel">
+      <svg class="ico"><use href="#i-cross"/></svg>
+      « Là où deux ou trois sont rassemblés… »
+    </div>
+  </div>
+</section>
+
+<section id="ministeres">
+  <div class="wrap">
+    <p class="eyebrow">◆ S'engager</p>
+    <h2>Nos ministères</h2>
+    <p class="lead">Chacun a un don à offrir. Trouvez le ministère où vous pouvez grandir et servir.</p>
+    <div class="grid g3">
+      <div class="card"><div class="ibox"><svg class="ico"><use href="#i-music"/></svg></div><h3>Louange</h3><p>Chorale et musiciens qui conduisent l'assemblée dans l'adoration.</p></div>
+      <div class="card"><div class="ibox"><svg class="ico"><use href="#i-smile"/></svg></div><h3>Enfants</h3><p>École du dimanche, jeux et enseignement adaptés à chaque âge.</p></div>
+      <div class="card"><div class="ibox"><svg class="ico"><use href="#i-cap"/></svg></div><h3>Jeunesse</h3><p>Rencontres, camps et discipulat pour les adolescents et jeunes adultes.</p></div>
+      <div class="card"><div class="ibox"><svg class="ico"><use href="#i-users"/></svg></div><h3>Familles</h3><p>Soutien aux couples et aux parents, groupes de partage.</p></div>
+      <div class="card"><div class="ibox"><svg class="ico"><use href="#i-heart"/></svg></div><h3>Entraide</h3><p>Aide alimentaire, visites aux malades et soutien aux personnes isolées.</p></div>
+      <div class="card"><div class="ibox"><svg class="ico"><use href="#i-globe"/></svg></div><h3>Évangélisation</h3><p>Actions de rue, rencontres de quartier et missions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="predications">
+  <div class="wrap">
+    <p class="eyebrow">◆ Médiathèque</p>
+    <h2>Dernières prédications</h2>
+    <p class="lead">Réécoutez les messages des derniers cultes. (Démonstration : les boutons simulent la lecture.)</p>
+    <div class="pred">
+      <div class="ligne"><button class="play" aria-label="Lire"><svg class="ico fill"><use href="#i-play"/></svg></button><div><h3>La foi qui agit</h3><small>Pasteur principal · 16 nov. 2026 · 42 min</small></div></div>
+      <div class="ligne"><button class="play" aria-label="Lire"><svg class="ico fill"><use href="#i-play"/></svg></button><div><h3>Marcher dans la lumière</h3><small>Pasteur principal · 09 nov. 2026 · 38 min</small></div></div>
+      <div class="ligne"><button class="play" aria-label="Lire"><svg class="ico fill"><use href="#i-play"/></svg></button><div><h3>Le pardon qui libère</h3><small>Pasteur invité · 02 nov. 2026 · 45 min</small></div></div>
+    </div>
+    <p id="msgLecture"></p>
+  </div>
+</section>
+
+<section id="agenda">
+  <div class="wrap">
+    <p class="eyebrow">◆ À venir</p>
+    <h2>Agenda de l'église</h2>
+    <p class="lead">Les prochains événements à ne pas manquer.</p>
+    <div class="grid g3">
+      <div class="event"><div class="date"><b>06</b><span>Déc.</span></div><div><h3>Concert de louange</h3><p>Soirée de chants avec la chorale et invités. Entrée libre.</p></div></div>
+      <div class="event"><div class="date"><b>13</b><span>Déc.</span></div><div><h3>Journée des familles</h3><p>Repas partagé, jeux et témoignages après le culte.</p></div></div>
+      <div class="event"><div class="date"><b>24</b><span>Déc.</span></div><div><h3>Veillée de Noël</h3><p>Célébration, chants et lecture biblique à 19h00.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dons" id="dons">
+  <div class="wrap cols">
+    <div>
+      <p class="eyebrow">◆ Soutenir l'œuvre</p>
+      <h2>Faire un don</h2>
+      <p class="t">Les offrandes et dons des fidèles soutiennent l'avancement de l'Évangile, l'entretien du lieu de culte et les actions d'entraide de l'Église Lumière de Sion.</p>
+      <a href="#contact" class="btn btn-sombre">Nous contacter</a>
+      <a href="#contact" class="btn btn-rouge">Écrire à l'église</a>
+    </div>
+    <div class="compte">
+      <div class="top"><span class="pill">Compte USD officiel</span><span class="tag">Banque Exemple</span></div>
+      <h3>Église Lumière de Sion</h3>
+      <div class="champ"><div><small>Numéro de compte (USD)</small><code id="c1">0000 0000 0000 0000 000</code></div><button class="copier" data-cible="c1">Copier</button></div>
+      <div class="champ"><div><small>Code SWIFT</small><code id="c2">EXMPXXXX</code></div><button class="copier" data-cible="c2">Copier</button></div>
+      <div class="champ"><div><small>Banque &amp; localisation</small><strong>Banque Exemple — Votre-Ville, Pays</strong></div></div>
+      <p class="note">Coordonnées fictives, à remplacer dans le cadre du TP.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt contact" id="contact">
+  <div class="wrap cols">
+    <div class="infos">
+      <p class="eyebrow">◆ Nous trouver</p>
+      <h2>Contact</h2>
+      <p class="lead" style="margin-bottom:28px">Une question, une demande de prière ? Écrivez-nous, nous vous répondrons avec joie.</p>
+      <div class="l"><div class="ibox"><svg class="ico"><use href="#i-pin"/></svg></div><div><b>Adresse</b><span>12 avenue de l'Espérance, 00000 Votre-Ville</span></div></div>
+      <div class="l"><div class="ibox"><svg class="ico"><use href="#i-phone"/></svg></div><div><b>Téléphone</b><span>+00 000 00 00 00</span></div></div>
+      <div class="l"><div class="ibox"><svg class="ico"><use href="#i-mail"/></svg></div><div><b>E-mail</b><span>contact@lumiere-de-sion.example</span></div></div>
+    </div>
+    <form id="form">
+      <div><label for="nom">Nom</label><input id="nom" required></div>
+      <div><label for="mail">E-mail</label><input id="mail" type="email" required></div>
+      <div><label for="msg">Message ou demande de prière</label><textarea id="msg" required></textarea></div>
+      <button class="btn btn-rouge" type="submit" style="justify-content:center">Envoyer</button>
+      <p id="msgForm"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="fmarque" href="#accueil">
+          <span class="logo-img"><svg class="ico" style="stroke-width:3"><use href="#i-cross"/></svg></span>
+          <b>Lumière de Sion</b>
+        </a>
+        <p>12 avenue de l'Espérance, 00000 Votre-Ville.</p>
+        <p>Sous la direction pastorale du <b>Pasteur Prénom NOM</b>.</p>
+        <div class="rec">
+          <h5>Réception pastorale</h5>
+          <p style="margin-bottom:4px"><b>Mercredi :</b> 10h00 à 17h00 (sans rendez-vous)</p>
+          <p style="margin:0">Autres jours : sur rendez-vous</p>
+        </div>
+        <p>Pasteur : <span class="mail">pasteur@lumiere-de-sion.example</span></p>
+        <p>Église : <span class="mail">contact@lumiere-de-sion.example</span></p>
+      </div>
+
+      <div>
+        <h4>Programme de culte</h4>
+        <div class="fj"><svg class="ico"><use href="#i-calendar"/></svg>Chaque mercredi</div>
+        <div class="fc"><b>10h00 – 17h00</b><span>Accueil pastoral, sans rendez-vous</span></div>
+        <div class="fc"><b>18h30 – 20h00</b><span>Étude biblique</span></div>
+        <div class="fj"><svg class="ico"><use href="#i-calendar"/></svg>Chaque vendredi</div>
+        <div class="fc"><b>19h00 – 21h00</b><span>Veillée de prière</span></div>
+        <div class="fj"><svg class="ico"><use href="#i-calendar"/></svg>Chaque dimanche</div>
+        <div class="fc"><b>09h30 – 12h00</b><span>Culte dominical d'adoration</span></div>
+        <div class="fj"><svg class="ico"><use href="#i-calendar"/></svg>Chaque 1<sup>er</sup> dimanche du mois</div>
+        <div class="fc"><b>17h00 – 20h00</b><span>Sainte-Cène et repas fraternel</span></div>
+      </div>
+
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#cultes">Nos cultes</a></li>
+          <li><a href="#apropos">Notre vision</a></li>
+          <li><a href="#ministeres">Nos ministères</a></li>
+          <li><a href="#predications">Prédications</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#dons">Faire un don</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Réseaux &amp; direct</h4>
+        <div class="sociaux">
+          <a href="#contact" aria-label="YouTube"><svg class="ico"><use href="#i-youtube"/></svg></a>
+          <a href="#contact" aria-label="Facebook"><svg class="ico"><use href="#i-facebook"/></svg></a>
+          <a href="#contact" aria-label="WhatsApp"><svg class="ico"><use href="#i-whatsapp"/></svg></a>
+        </div>
+        <div class="direct">
+          <h5><svg class="ico"><use href="#i-radio"/></svg>Diffusion en direct</h5>
+          <p>Chaque dimanche, le culte est retransmis en direct sur la chaîne en ligne de l'église.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bas">
+      <span>© 2026 Église Lumière de Sion — Site fictif réalisé dans le cadre d'un travail pratique.</span>
+      <span>Tous droits réservés</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
